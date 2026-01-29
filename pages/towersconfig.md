@@ -100,7 +100,7 @@ Example how registered stats looks in-game:
 
 ---
 
-Add your towers file to [main config](#mainconfig):
+Add your towers file to [main config](mainconfig.md):
 
 ```json
 {

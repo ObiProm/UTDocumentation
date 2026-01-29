@@ -2,7 +2,7 @@
 Allows use of mod resources. All resources load with paths relative to the mod folder.
 
 >**INTERNAL**<br>
->This is used internally — although you're able to use it you probably shouldn't.<br>
+>Functions of the `Get<Type>Resource` type are used internally, they are not recommended.<br>
 >**We recomend to use** `LoadResource(path)` instead of this
 
 

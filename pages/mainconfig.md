@@ -15,6 +15,7 @@ This file contains the essential information about your mod that players will se
     "ZombiesConfig": "Zombies.json",
     "MapsConfig": "Maps.json",
     "TowersConfig": "Towers.json",
+    "SettingsConfig": "Settings.json",
     "Name": "Your mod",
     "Description": "Your interesting description",
     "Author": "Currens Ludos",
@@ -33,7 +34,9 @@ This file contains the essential information about your mod that players will se
 
 - **MapsConfig**: Path to your maps configuration file. This defines custom maps or map modifications.  
 
-- **TowersConfig**: Path to your towers configuration file. This handles custom tower definitions and behaviors.  
+- **TowersConfig**: Path to your towers configuration file. This handles custom tower definitions and behaviors. 
+
+- **SettingsConfig**: Path to your settings configuration file. This handles custom settings.
 
 - **Name**: The display name of your mod as it appears in the mod manager. Keep it short, memorable, and descriptive.  
 

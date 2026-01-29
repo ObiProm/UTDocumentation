@@ -2,11 +2,20 @@
 
 ---
 
+- **Step by step**
+
+  - [First mod](pages/first_mod.md)
+
+
 - **Core systems**
 
   - [Server hosting](pages/server_hosting.md)
+  - [Developer console](pages/developer_console.md)
   - [Submodules](pages/submodules.md)
-  - [Importing scenes and maps](pages/importing_scenes_maps.md)
+  - [Loading scenes](pages/loading_scenes.md)
+  - [Importing models](pages/importing_models.md)
+  - [Setting up maps](pages/map_scene.md)
+  - [Setting up towers](pages/tower_scene.md)
 
 - **API Reference**
   - [Node](pages/node.md)
@@ -39,3 +48,4 @@
   - [Maps Config](pages/mapsconfig.md)
   - [Gamemodes Config](pages/gamemodesconfig.md)
   - [Zombies Config](pages/zombies_config.md)
+  - [Settings Config](pages/settings_config.md)

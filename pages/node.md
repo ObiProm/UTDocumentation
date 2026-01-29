@@ -21,9 +21,9 @@ The following methods are **not available** on `Node`:
 
 | Need | Use |
 |------|-----|
-| RPC calls | [`RpcNode`](#rpcnode) |
+| RPC calls | [`RpcNode`](pages/rpcnode.md) |
 | Multiplayer checks | Globals: `IsServer()`, `GetUniqueId()` |
-| Events/Signals | [`LuaEvent`](#luaevent) class |
+| Events/Signals | [`LuaEvent`](pages/luaevent.md) class |
 
 ## See Also
 

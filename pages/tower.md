@@ -1,6 +1,6 @@
 # Tower
 
-To create new tower you need to fill [tower config](#towerconfig).  
+To create new tower you need to fill [tower config](pages/towerconfig.md).  
 In code you just need to create new class with same name, that in config you created. Let's look at example:
 
 ```lua

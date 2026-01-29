@@ -14,7 +14,7 @@ Represents an active room instance.
 | `IsVisible` | `boolean` | Whether the room appears in the public room list. |
 | `GameStarted` | `boolean` | `true` if the game has started and players can no longer join. |
 | `Admin` | `PlayerLobby` | The player who owns/created the room. |
-| `BecomeEmpty` | `fun() \| nil` | Event callback triggered when the last player leaves the room. |
+| `BecomeEmpty` | `LuaEvent` | Event callback triggered when the last player leaves the room. |
 
 ## Example
 ```lua

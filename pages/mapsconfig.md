@@ -27,7 +27,7 @@ Create file `Maps.json` in your mod folder:
 
 All paths are relative to your mod folder.
 
-You must add this file to your [main config](#mainconfig):
+You must add this file to your [main config](pages/mainconfig.md):
 
 ```json
 {

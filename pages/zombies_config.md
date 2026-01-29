@@ -1,6 +1,6 @@
 ## Zombies Config
 
-To define custom zombie types, create a JSON file and reference it in your mod's [main config](#mainconfig).
+To define custom zombie types, create a JSON file and reference it in your mod's [main config](mainconfig.md).
 
 In this config **all fields are optional**!
 
@@ -43,7 +43,7 @@ In this config **all fields are optional**!
   
 - If from `Health` and `MaxHealth` only one is specified, the other automatically matches it. Example: `"Health": 50` implies `"MaxHealth": 50`
 
-Add your zombies config to the [main config](#mainconfig):
+Add your zombies config to the [main config](mainconfig.md):
 ```json
 {
     "ZombiesConfig": "Zombies.json"

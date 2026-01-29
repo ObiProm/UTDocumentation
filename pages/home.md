@@ -25,4 +25,4 @@ But sometimes nodes are not tables (we are trying to fix it, repot this bugs), l
 
 <br>
 
-See [Node](#node).
+See [Node](pages/node.md).

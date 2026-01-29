@@ -21,6 +21,14 @@
         sidebarDisplayLevel: 0,
         auto2top: true,
         sidebarAutoClose: false,
+        search: {
+          maxAge: 86400000,
+          paths: 'auto',
+          placeholder: 'Type to search',
+          noData: 'No Results!',
+          depth: 1,
+          hideOtherSidebarContent: false,
+        }
       };
     </script>
 
@@ -35,5 +43,8 @@
 
     <script src="scr/colapsing_sidebar.js"></script>
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css" />
+
+    <!-- <script src="//unpkg.com/lunr/lunr.js"></script>
+    <script src="search.js"></script> -->
   </body>
 </html>

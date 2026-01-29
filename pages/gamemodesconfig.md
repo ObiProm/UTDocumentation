@@ -1,7 +1,7 @@
 ## Gamemodes Config
 
 To use it, you must create file with any name, but you must add it to your mod's main config.  
-See also [main config](#mainconfig)
+See also [main config](pages/mainconfig.md)
 
 ```json
 {
@@ -38,7 +38,7 @@ See also [main config](#mainconfig)
 
 **Note**: If both `AvailableMaps` and `DisabledMaps` are empty or not stated, all maps are available.  
 
-Add your gamemodes file to [main config](#mainconfig):
+Add your gamemodes file to [main config](pages/mainconfig.md):
 
 ```json
 {

@@ -123,7 +123,7 @@ game.RegisterClass("SuperNode", {
 
 Registers a submodule that runs independently of game modes. Submodules are loaded for all game modes.
 
-Read also [submodules](#submodules)
+**Read also** [submodules](pages/submodules.md)
 
 #### Parameters:
 
@@ -131,13 +131,15 @@ Read also [submodules](#submodules)
 - `classTable` (`table`) — Lua table containing module methods and properties.
 
 ```lua
-game.RegisterSubmodule("UTLogo", {
-    _Ready = function(self)
-        local logo = game.CreateNode("TextureRect")
-        logo.Texture = LoadResource("UTIcon.png")
-        self:GetParent():AddChild(logo)
-    end
-})
+local test = {}
+
+function test:_Ready()
+    local image = game.CreateNode("TextureRect")
+    image.Texture = LoadResource("UTIcon.png")
+    self:GetParent():AddChild(image)
+end
+
+game.RegisterSubmodule("Test", test)
 ```
 
 ---
@@ -193,14 +195,14 @@ Loads a scene from the given resource path.
 
 #### Parameters:
 
-- `path` (`string`) — Resource path (e.g., `"res://Scenes/Game.tscn"`).
+- `path` (`string`) — Resource path (e.g., `"Scenes/Game.tscn"`).
 
 #### Returns:
 
 - `PackedScene` — A packed scene ready for instantiation.
 
 ```lua
-local scene = game.LoadScene("res://Scenes/Game.tscn")
+local scene = game.LoadScene("Scenes/Game.tscn")
 local instance = scene:Instantiate()
 game.GetCurrentScene():AddChild(instance)
 ```
@@ -209,11 +211,11 @@ game.GetCurrentScene():AddChild(instance)
 
 ### `game.GetPlayerPacked(): PackedScene`
 
-Returns the default player scene template.
+Returns the default player scene.
 
 #### Returns:
 
-- `PackedScene` — Player scene template with `PlayerCamera` as root.
+- `PackedScene` — Player scene with `PlayerController` as root.
 
 ```lua
 local playerScene = game.GetPlayerPacked()
@@ -225,11 +227,11 @@ game.GetCurrentScene():AddChild(playerInstance)
 
 ### `game.GetUIPacked(): PackedScene`
 
-Returns the default UI scene template.
+Returns the default UI scene.
 
 #### Returns:
 
-- `PackedScene` — UI scene template ready for instantiation.
+- `PackedScene` — UI scene ready for instantiation.
 
 ```lua
 local uiScene = game.GetUIPacked()
@@ -270,14 +272,14 @@ Converts a raw Godot Node into a Lua-wrapped Node with methods and metatable.
 
 - `table` — The wrapped node with Lua class functionality.
 
-> Note: Use this when working with nodes passed from Godot scripts or signals.
+> Note: Use this when working with nodes, that was not converted into wrapper by some reason (like base hierarhy elements or because of bug)
 
 ```lua
--- When receiving a node from Godot signal
-function onNodeEntered(areaNode)
-    local luaNode = game.CreateNodeWrapper(areaNode)
-    luaNode:CustomMethod() -- Now has Lua class methods
-end
+-- When getting something from root, like ServerLobbyManager (its userdata)
+local luaNode = game.CreateNodeWrapper(game.GetRoot():GetNode("ServerLobbyManager"))
+
+ -- Now you can add custom fields/functions to this node
+luaNode.MyCustomField = "Yay"
 ```
 
 ---
@@ -324,7 +326,9 @@ print("Tower damage: " .. config.damage)
 
 ### `game.CreateTower(towerId): Tower`
 
-Creates a new tower instance based on its configuration.
+Creates a new tower instance based on its id.
+
+**Read also** [Tower](pages/tower.md)
 
 #### Parameters:
 
@@ -335,16 +339,21 @@ Creates a new tower instance based on its configuration.
 - `Tower` — A new tower instance ready for placement.
 
 ```lua
-local tower = game.CreateTower("BasicTower")
-tower:PlaceAt(position)
-game.GetCurrentScene():AddChild(tower.node)
+local tower = game.CreateTower("Agent")
+tower.Position = position
+tower:Initialize(GetUniqueId()) -- will bind tower to local player
+
+game.GetCurrentScene():AddChild(tower)
+tower.OnTowerPlaced() -- you can skip it, but many towers initializing there
 ```
 
 ---
 
 ### `game.CreateEvent(): LuaEvent`
 
-Creates a new Lua event object for event-driven programming.
+Creates a new Lua event object for event-driven programming. 
+
+**Read also** [LuaEvent](pages/luaevent.md)
 
 #### Returns:
 
@@ -354,12 +363,12 @@ Creates a new Lua event object for event-driven programming.
 local myEvent = game.CreateEvent()
 
 -- Subscribe to event
-myEvent:Connect(function(data)
-    print("Event received:", data.message)
+myEvent:Connect(function(someStr, arg2)
+    print("Event received:", someStr, arg2)
 end)
 
--- Fire event
-myEvent:Fire({message = "Hello from event!"})
+-- Call event
+myEvent:Invoke("Hello from event!", 12)
 ```
 
 ---
@@ -389,10 +398,8 @@ Returns the wave parser utility for parsing wave configuration data.
 
 ```lua
 local waveParser = game.GetWaveParser()
-local waves = waveParser:ParseWaveData(waveConfig)
-for _, wave in ipairs(waves) do
-    print("Wave enemies: " .. wave.enemyCount)
-end
+waveParser.OnEnemySpawnRequested.Connect(self.SpawnZombie, self)
+waveParser.OnWaveStarted.Connect(self.StartWave, self)
 ```
 
 ---
@@ -460,15 +467,17 @@ print("Table has " .. count .. " keys") -- "Table has 3 keys"
 
 ### `game.PrintAllLuaTables()`
 
-Prints all Lua tables registered with nodes to the debug log. Useful for debugging memory leaks or unexpected behavior.
+Prints all paths to nodes, which has binded lua tables. Useful for debugging memory leaks or unexpected behavior.
 
 ```lua
 -- Call this when debugging to see all registered Lua tables
 
 game.PrintAllLuaTables()
 
--- Output in log: "Registered Lua tables: 15"
 -- Followed by detailed table information
+-- /root/@Label@200
+-- /root/SomeCustomLuaSystem
+-- /root/SomeCustomLuaSystem/Helper
 ```
 
 ---
