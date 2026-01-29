@@ -5,6 +5,8 @@
 - **Step by step**
 
   - [First mod](pages/first_mod.md)
+  - [Basic concepts](pages/basic_concepts.md)
+  - [First submodule](pages/first_submodule.md)
 
 
 - **Core systems**
