@@ -90,7 +90,7 @@
     - **Description** - Description shown to players
     - **Cost** - Cost to purchase this upgrade
     - **Icon** - Path to upgrade icon
-    - **StatChanges** - Statistics that change with this upgrade
+    - **StatChanges** - Statistics that change with this upgrade (**WARNING:** if its number, so it pluses given value)
 
 ---
 
@@ -100,7 +100,7 @@ Example how registered stats looks in-game:
 
 ---
 
-Add your towers file to [main config](mainconfig.md):
+Add your towers file to [main config](pages/mainconfig.md):
 
 ```json
 {

@@ -34,6 +34,7 @@ Notifies the system that this client has finished loading and is ready to start 
 ### Creating a Custom Loading Manager
 
 1. **Create a new Lua class** that inherits from `LoadingManager`:
+
 ```lua
 ---@class MyCustomLoadingManager : LoadingManager
 local MyCustomLoadingManager = {}
@@ -112,5 +113,5 @@ In your gamemode configuration file you must place name of class into `LoadingMa
   LoadingUI.SetStatus("Loading maps...")
   LoadingUI.SetPercentage(25)
   ```
-- **Network Roles**: Check `IsServer()` to determine if current instance is server or client.
+- **Network Roles**: Check `IsServer()` and `IsLocalForRoom(room)` to determine if current instance is server or client.
 - **Resource Loading**: Use `game.GetMap()`, `game.GetPlayerPacked()`, and `game.GetUIPacked()` to load game resources.

@@ -23,7 +23,7 @@ Create file `Maps.json` in your mod folder:
 - **Header** (like "Neon City") - The name players will see in map selection
 - **Icon** - Path to icon image shown in menus  
 - **Description** - Short text description of the map  
-- **ScenePath** - Path to the actual map file (.tscn)  
+- **ScenePath** - Path to the actual map file (.tscn). Read [setting up map scene](pages/map_scene.md) 
 
 All paths are relative to your mod folder.
 
