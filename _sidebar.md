@@ -8,6 +8,7 @@
   - [Basic concepts](pages/basic_concepts.md)
   - [First submodule](pages/first_submodule.md)
   - [Creating tower](pages/creating_tower.md)
+  - [Creating settings](pages/creating_settings.md)
 
 
 - **Core systems**
@@ -29,6 +30,8 @@
   
   - **Nodes**
     - [RpcNode](pages/rpcnode.md)
+    - [Labeled slider](pages/labeledslider.md)
+    - [Timed label](pages/TimedLabel.md)
     - [PlayerController](pages/playercontroller.md)
     - [TowerPlacementManager](pages/towerplacementmanager.md)
     - [Zombie](pages/zombie.md)
@@ -42,10 +45,11 @@
     - [ResourceManager](pages/resourcemanager.md)
     - [SettingsManager](pages/settingsmanager.md)
 
-  - **Structures**
+  - **Entities**
     - [Room](pages/room.md)
-    - [RoomInfo](pages/roominfo.md)
     - [PlayerLobby](pages/playerlobby.md)
+    - [Team](pages/Team.md)
+    - [RoomSettings](pages/RoomSettings.md)
 
 - **Configs**
 

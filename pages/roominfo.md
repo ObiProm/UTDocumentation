@@ -2,6 +2,9 @@
 
 Metadata about a room, used for room listing.
 
+>**DEPRECATED**<br>
+>It was removed on alpha stage development.<br>
+
 ## Fields
 
 | Field | Type | Description |

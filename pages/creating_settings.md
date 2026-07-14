@@ -2,8 +2,12 @@
 
 To create setting fill [settings Config](pages/settings_config.md)
 
+Also read [build-in settings reference](pages/standard_settings_reference.md)
 
 
+### Example
+
+Here is how to use settings
 
 ```lua
 Audio.CreateBus("DJMusic")

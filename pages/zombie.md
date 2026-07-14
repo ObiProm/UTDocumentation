@@ -50,7 +50,7 @@ Zombie will receive damage in count `damage`.
 
 </div>
 
-### Fields
+### Events
 
 <div class="markdownTable">
 

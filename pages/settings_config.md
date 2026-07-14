@@ -42,7 +42,7 @@ Types:
 
 ### Range
 
-It is `LabeledSlider` node (Non godot node). So it has these fields:
+It is `LabeledSlider` ([reference](pages/labeledslider.md)) node (Non godot node). So it has these fields:
  - Header
  - ShowPercentage - if off, shows setting value. If on, shows `{Value / (MaxValue - MinValue) * 100}%`, shows only 1 number after dot
  - MinValue - slider min value

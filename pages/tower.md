@@ -105,11 +105,11 @@ Checks is path locked
 | `Health` | `int` | get/set | Current health of the tower. When reaches `0`, the tower is destroyed. Default: `100`. |
 | `MaxHealth` | `int` | get/set | Maximum health. If set to `0`, the tower becomes invincible. Default: `100`. |
 | `IsSellable` | `bool` | get/set | Whether the tower can be sold. Default: `true`. Disabling this hides or disables the sell option in UI. |
-| `SellPrice` | `int` | get/set | Sell price as a percentage of build cost. Changing this value automatically syncs it to all room players via `RpcRoomPlayers` and refreshes the upgrade menu UI if open. |
+| `SellPrice` | `int` | get/set | Sell price as a percentage of build cost. **Changing this value automatically syncs it** to all room players via `RpcRoomPlayers` and refreshes the upgrade menu UI if open. **CAN BE SETTED ONLY AT SERVER** |
 | `IsSelectedByUpgradeMenu` | `bool` | get | `true` if an upgrade menu is currently open for this tower (`CurrentOpenedUpgradeMenu != null`). |
 | `CurrentOpenedUpgradeMenu` | `UpgradeMenuUI \| nil` | get | Reference to the currently active upgrade menu UI instance. Set internally by the UI system; not intended for external modification. |
 | `UpgradePathsCount` | `int` | get | Number of upgrade paths initialized for this tower (typically defined in Lua config). |
-| `EnableDefaultSellPriceCount` | `bool` | get/set | If `true`, `SellPrice` is auto-calculated based on upgrade progress (default behavior). If `false`, uses the explicitly set `SellPrice` value. Default: `true`. |
+| `EnableDefaultSellPriceCount` | `bool` | get/set | If `true`, `SellPrice` is auto-calculated based on upgrade progress (default behavior). If `false`, uses the explicitly set `SellPrice` value. Default: `true`. **CAN BE SETTED ONLY AT SERVER** |
 
 ---
 
@@ -137,7 +137,7 @@ function MyTower:PopulateUpgradeMenuButtons(upgradeMenu, additionalButtonsContai
     helloButton.Text = "Hey!"
 
     local bottomIconContainerButton = game.CreateNode("Button")
-    bottomIconContainerButton.Text = "Im in botton container!"
+    bottomIconContainerButton.Text = "Im in bottom container!"
 
     additionalButtonsContainer.AddChild(helloButton)
     bottomIconContainer.AddChild(bottomIconContainerButton)
