@@ -11,6 +11,12 @@ Since the game is based on Godot, we use Godot Nodes as the basic objects. The m
 
 Our modified Lua is called **ULua**. The documentation will focus on ULua and creating addons, as well as how they work and the developer tool.
 
+### Download game
+
+Game is still in development, you can download alpha version of it download at **[google drive](https://drive.google.com/file/d/1GIUlthElBRDkEDTYf6zcMivwp2_lytUu/)**
+
+Also visit our socials: [Discord](https://discord.gg/4a4e22Gqbu) and [Telegram](https://t.me/CurrensLudos)
+
 ## ULua API
 
 ### Main ideas
